@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Online Stundenlohnrechner für Freiberufler, Teilzeitbeschäftigte und alle, die ihren Stundenlohn kalkulieren möchten." />
+  <title>Stundenlohnrechner – Online Tool zur Berechnung</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+
+<body>
+  <div class="container content mx-auto px-5 my-5 py-5">
+    <!-- Haupt-Überschrift -->
+    <h1 class="title mb-6">Stundenlohnrechner</h1>
+
+    <!-- Einleitung -->
+    <p class="mb-6">Möchtest du deinen Stundenlohn schnell und genau berechnen? Mit dem Stundenlohn-Rechner.com Tool ist es einfacher denn je, speziell entwickelt für Freiberufler, Teilzeitbeschäftigte und alle, die ihren Stundenlohn kalkulieren möchten.</p>
+
+    <!-- Rechner-Interface -->
+    <div class="box mb-6">
+      <label class="label" for="gehalt">Dein Gehalt</label>
+      <div class="field has-addons">
+        <div class="control is-expanded">
+          <input type="number" min="100" id="gehalt" class="input" placeholder="Gehalt eingeben">
+        </div>
+        <div class="control">
+          <div class="select">
+            <select id="gehaltZeitraum">
+              <option>Monat</option>
+              <option>Jahr</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-mobile mb-0">
+        <div class="column">
+          <label class="label" for="nettoBrutto">Brutto oder Nettolohn</label>
+          <div class="control">
+            <div class="select is-fullwidth">
+              <select id="nettoBrutto">
+                <option>Brutto</option>
+                <option>Netto</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="column" id="steuersatz-column">
+          <label class="label" for="steuersatz">Steuersatz auf Nettolohn</label>
+          <div class="field has-addons mb-0">
+            <div class="control is-expanded">
+              <input type="number" min="1" max="100" id="steuersatz" class="input mb-4 is-expanded" placeholder="Steuersatz in % eingeben">
+            </div>
+            <div class="control">
+              <a class="button is-static">
+                %
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="label" for="anzahlStunden">Anzahl Stunden</label>
+      <div class="field has-addons">
+        <div class="control is-expanded">
+          <input type="number" id="anzahlStunden" class="input" placeholder="Anzahl Stunden eingeben">
+        </div>
+        <div class="control">
+          <div class="select">
+            <select id="stundenZeitraum">
+              <option>Woche</option>
+              <option>Monat</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="notification has-text-centered is-primary mt-5" id="ergebnis">
+        <span class="is-size-2" id="stundenlohn">Dein Stundenlohn</span>
+      </div>
+    </div>
+
+    <!-- Zusätzliche Informationen und Ressourcen -->
+    <h1>Wie rechne ich meinen Stundenlohn aus?</h1>
+    <p>Dein Stundenlohn ist von zentraler Bedeutung sowohl für Arbeitnehmer als auch für Selbstständige. Er ermöglicht es dir, dein Einkommen zu verstehen und fundierte finanzielle Entscheidungen zu treffen. Unser Stundenlohn-Rechner macht die Berechnung dieses Werts einfach und präzise. So gehst du vor:</p>
+    <ol>
+      <li><strong>Gib dein Gehalt ein:</strong> Trage dein Gehalt ein, das du pro Monat oder Jahr verdienst.</li>
+      <li><strong>Wähle den Zeitraum:</strong> Entscheide, ob dein Gehalt brutto oder netto ist. Standardmäßig ist die Option auf Brutto eingestellt. Bei Netto-Gehalt gibst du zusätzlich deinen Steuersatz in Prozent ein.</li>
+      <li><strong>Lege deine Arbeitsstunden fest:</strong> Gib die Anzahl der Arbeitsstunden ein, die du in der gewählten Zeitperiode (pro Woche oder Monat) leistest.</li>
+      <li><strong>Berechne deinen Stundenlohn:</strong> Sofort danach wird der Stundenlohn automatisch angezeigt. Dieser aktualisiert sich automatisch bei jeder Eingabe.</li>
+    </ol>
+    <h2>Die einfache Formel hinter dem Rechner:</h2>
+    <p>Dein Stundenlohn wird nach folgender einfachen Formel berechnet: Stundenlohn = Bruttovergütung / Arbeitsstunden. Diese Formel erfordert keine komplexe Mathematik und ermöglicht es dir, den Wert selbst zu ermitteln. Durch die zusätzlichen Optionen kann die Berechnung weiter verfeinert werden.</p>
+    <h2>Häufig gestellte Fragen zum Stundenlohn:</h2>
+    <dl>
+      <dt>1. Was ist der Unterschied zwischen Brutto- und Nettolohn?</dt>
+      <dd>Der Bruttolohn ist der Betrag vor Abzug von Steuern und Sozialversicherungsbeiträgen. Der Nettolohn hingegen ist der Betrag, den du nach Abzügen erhältst.</dd>
+      <dt>2. Warum ist der Stundenlohn wichtig?</dt>
+      <dd>Der Stundenlohn hilft Arbeitnehmern und Selbstständigen dabei, ihr Einkommen zu planen und finanzielle Entscheidungen auf fundierter Basis zu treffen.</dd>
+      <dt>3. Welche Rolle spielt der Steuersatz bei der Netto-Berechnung?</dt>
+      <dd>Der Steuersatz beeinflusst den Netto-Lohn. Je höher der Steuersatz, desto mehr Abzüge werden vom Bruttogehalt vorgenommen.</dd>
+      <dt>4. Kann ich den Stundenlohn-Rechner für Teilzeitarbeit verwenden?</dt>
+      <dd>Ja, der Rechner ist für Vollzeit- und Teilzeitbeschäftigung gleichermaßen geeignet.</dd>
+    </dl>
+    <p>Nutze unseren Stundenlohn-Rechner, um Klarheit über dein Einkommen zu gewinnen und kluge finanzielle Entscheidungen zu treffen. Ganz gleich, ob du deinen Brutto- oder Nettolohn ermitteln möchtest – unser Rechner steht dir zur Verfügung!</p>
+
+  </div>
+</body>
+<script>
+    // Funktion zum Aktualisieren des Steuersatz-Felds
+    function updateSteuersatzField() {
+    const nettoBruttoSelect = document.getElementById("nettoBrutto").value;
+    const steuersatzField = document.getElementById("steuersatz-column");
+
+    steuersatzField.style.display = nettoBruttoSelect === "Netto" ? "block" : "none";
+    updateStundenlohn();
+    }
+
+    // Funktion zum Aktualisieren des Stundenlohns und Anzeigen des Ergebnisses
+    function updateStundenlohn() {
+    const gehaltInput = parseFloat(document.getElementById("gehalt").value);
+    const steuersatzInput = parseFloat(document.getElementById("steuersatz").value);
+    const anzahlStundenInput = parseFloat(document.getElementById("anzahlStunden").value);
+    const nettoBruttoSelect = document.getElementById("nettoBrutto").value;
+    const gehaltZeitraumSelect = document.getElementById("gehaltZeitraum").value;
+    const stundenZeitraumSelect = document.getElementById("stundenZeitraum").value;
+
+    if (isNaN(gehaltInput) || isNaN(anzahlStundenInput)) return;
+
+    const stundenProZeitraum = stundenZeitraumSelect === "Monat" ? anzahlStundenInput : anzahlStundenInput * 4.33;
+    const gehaltProJahr = gehaltZeitraumSelect === "Monat" ? gehaltInput * 12 : gehaltInput;
+
+    const steuersatzFactor = nettoBruttoSelect === "Netto" ? 1 - steuersatzInput / 100 : 1;
+
+    let stundenlohn = (gehaltProJahr / (stundenProZeitraum * 12)) / steuersatzFactor;
+    stundenlohn = isNaN(stundenlohn) ? "" : stundenlohn.toFixed(2);
+
+    const stundenlohnElement = document.getElementById("stundenlohn");
+    const userCountry = getUserCountry();
+
+    stundenlohnElement.textContent = `${stundenlohn} ${userCountry === "CH" ? "CHF" : "Euro"}`;
+    }
+
+    // Funktion zur Ermittlung des Landes anhand der Zeitzone
+    function getUserCountry() {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    return timezone === "Europe/Zurich" ? "CH" : "Other";
+    }
+
+    // Event Listener für Änderungen
+    document.getElementById("nettoBrutto").addEventListener("change", updateSteuersatzField);
+    document.getElementById("gehalt").addEventListener("input", updateStundenlohn);
+    document.getElementById("gehaltZeitraum").addEventListener("change", updateStundenlohn);
+    document.getElementById("steuersatz").addEventListener("input", updateStundenlohn);
+    document.getElementById("anzahlStunden").addEventListener("input", updateStundenlohn);
+    document.getElementById("stundenZeitraum").addEventListener("change", updateStundenlohn);
+
+    // Initialisierung
+    updateSteuersatzField();
+    updateStundenlohn();
+
+    // URL auf Domain umleiten
+    function updateURL(url) {
+    window.history.pushState({}, "", url);
+    }
+
+    updateURL("/");
+</script>
+
+</html>
